@@ -1,0 +1,212 @@
+/* Add Case Modal Overlay */
+.add-case-modal-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: rgba(0, 0, 0, 0.8) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 1000001 !important;
+  backdrop-filter: blur(8px) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* --- Minimal Add Case Modal Styles --- */
+.add-case-modal {
+  background: #232526 !important;
+  border: 1px solid #333 !important;
+  border-radius: 10px !important;
+  width: 95% !important;
+  max-width: 400px !important;
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  z-index: 1000002 !important;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  border-bottom: 1px solid #333;
+  background: none;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 5px;
+  transition: background 0.2s;
+}
+.close-btn:hover {
+  background: #292929;
+  color: #fff;
+}
+
+.modal-content {
+  padding: 18px 20px 0 20px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #fff;
+  font-size: 13px;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  font-size: 13px;
+  background: #232526;
+  color: #fff;
+  box-sizing: border-box;
+  transition: border 0.2s;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #1db954;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #888;
+}
+.form-group textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+.char-count {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+  color: #888;
+  text-align: right;
+}
+.priority-options {
+  display: flex;
+  gap: 10px;
+}
+.priority-option {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.priority-option input[type="radio"] {
+  display: none;
+}
+.priority-label {
+  padding: 6px 14px;
+  border-radius: 14px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1.5px solid #333;
+  background: #232526;
+  color: #bbb;
+  transition: border 0.2s, color 0.2s, background 0.2s;
+}
+.priority-label.low { color: #4caf50; }
+.priority-label.medium { color: #ffc107; }
+.priority-label.high { color: #f44336; }
+.priority-option input[type="radio"]:checked + .priority-label {
+  border-color: #1db954;
+  color: #fff;
+  background: #1db95422;
+}
+.priority-option:hover .priority-label {
+  border-color: #1db954;
+}
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  padding: 14px 20px;
+  border-top: 1px solid #333;
+  background: none;
+  border-radius: 0 0 10px 10px;
+}
+.cancel-btn {
+  padding: 8px 18px;
+  border: 1px solid #333;
+  background: #232526;
+  color: #aaa;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+.cancel-btn:hover:not(:disabled) {
+  background: #292929;
+  color: #fff;
+  border-color: #1db954;
+}
+.submit-btn {
+  padding: 8px 18px;
+  border: none;
+  background: #1db954;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.submit-btn:hover:not(:disabled) {
+  background: #17a74a;
+}
+.submit-btn:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+.cancel-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .add-case-modal {
+    width: 95%;
+    margin: 20px;
+  }
+  
+  .modal-content {
+    padding: 24px;
+  }
+  
+  .priority-options {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .modal-actions {
+    flex-direction: column;
+  }
+} 
